@@ -1,8 +1,8 @@
-const horas = document.getElementById('horas')
+const horas = document.getElementById('horas') // Declaração de Variaveis
 const minutos = document.getElementById('minutos')
 const segundos = document.getElementById('segundos')
 
-const relogio = setInterval(function time(){
+function time(){ //Função que vai pegar, hora, minuto, segundo
     let atual = new Date()
     let hr = atual.getHours()
     let min = atual.getMinutes()
@@ -12,7 +12,8 @@ const relogio = setInterval(function time(){
     if(min < 10) min = '0' + min
     if(seg < 10) seg = '0' + seg
     
-    horas.textContent = hr;
-    minutos.textContent = min;
-    segundos.textContent = seg;
-})
+    horas.textContent = hr; // jogando a hora atual para dentro
+    minutos.textContent = min; // jogando o minuto atual para dentro
+    segundos.textContent = seg; // jogando o segundo atual para dentro
+}
+ const relogio = setInterval(time, 1000) // SETINTERVAL, função que vai se repetir com intervalos de tempo determinados, nessa está se repetindo a cada segundo,no caso 1000 milísegundos
